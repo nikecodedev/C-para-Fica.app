@@ -1,4 +1,5 @@
 #include "TrackingEngine.hpp"
+#include "../logging/TrackingLogger.hpp"
 #include "../math/CoordinateConverter.hpp"
 #include <cmath>
 
@@ -113,31 +114,48 @@ TrackingState TrackingEngine::tick(double timestamp) {
     lastTickTimeValid_ = true;
 
     IMUSample imu;
-    if (getImuAt(timestamp, imu)) {
+    bool hasImuThisTick = getImuAt(timestamp, imu);
+    if (hasImuThisTick) {
         hasImu_ = true;
         ekf_.setImuInput(imu.ax, imu.ay, imu.az, imu.gx, imu.gy, imu.gz);
     }
 
     ekf_.predict(dt);
 
+    double gpsE[3] = {0, 0, 0};
+    bool hasGpsThisTick = false;
     if (originSet_ || !gpsBuffer_.empty()) {
         GPSSample gps;
-        if (getGpsAt(timestamp, gps) && gps.timestamp > lastAppliedGpsTime_) {
+        if (getGpsAt(timestamp, gps)) {
             if (!originSet_) {
                 setOrigin(gps.lat_deg, gps.lon_deg, gps.alt_m);
             }
-            lastAppliedGpsTime_ = gps.timestamp;
             const double lat_rad = math::CoordinateConverter::degToRad(gps.lat_deg);
             const double lon_rad = math::CoordinateConverter::degToRad(gps.lon_deg);
             math::ENU enu = converter_.geodeticToENU(lat_rad, lon_rad, gps.alt_m);
-            ekf_.updateGPS(enu.east, enu.north, enu.up);
+            gpsE[0] = enu.east;
+            gpsE[1] = enu.north;
+            gpsE[2] = enu.up;
+            hasGpsThisTick = true;
+            if (gps.timestamp > lastAppliedGpsTime_) {
+                lastAppliedGpsTime_ = gps.timestamp;
+                ekf_.updateGPS(enu.east, enu.north, enu.up);
+            }
         }
     }
 
+    double magV[3] = {0, 0, 0};
+    bool hasMagThisTick = false;
     MagSample mag;
-    if (getMagAt(timestamp, mag) && mag.timestamp > lastAppliedMagTime_) {
-        lastAppliedMagTime_ = mag.timestamp;
-        ekf_.updateMagnetometer(mag.mx, mag.my, mag.mz);
+    if (getMagAt(timestamp, mag)) {
+        magV[0] = mag.mx;
+        magV[1] = mag.my;
+        magV[2] = mag.mz;
+        hasMagThisTick = true;
+        if (mag.timestamp > lastAppliedMagTime_) {
+            lastAppliedMagTime_ = mag.timestamp;
+            ekf_.updateMagnetometer(mag.mx, mag.my, mag.mz);
+        }
     }
 
     const auto& x = ekf_.getState();
@@ -151,6 +169,45 @@ TrackingState TrackingEngine::tick(double timestamp) {
     state.qx = x(fusion::StateIndex::QX, 0);
     state.qy = x(fusion::StateIndex::QY, 0);
     state.qz = x(fusion::StateIndex::QZ, 0);
+
+    if (logger_) {
+        logging::TrackingLogEntry entry;
+        entry.timestamp = timestamp;
+        entry.px = state.px;
+        entry.py = state.py;
+        entry.pz = state.pz;
+        entry.vx = state.vx;
+        entry.vy = state.vy;
+        entry.vz = state.vz;
+        entry.qw = state.qw;
+        entry.qx = state.qx;
+        entry.qy = state.qy;
+        entry.qz = state.qz;
+        const auto& P = ekf_.getCovariance();
+        for (int i = 0; i < 16; ++i) entry.P[i] = P(i, i);
+        if (hasImuThisTick) {
+            entry.raw_ax = imu.ax;
+            entry.raw_ay = imu.ay;
+            entry.raw_az = imu.az;
+            entry.raw_gx = imu.gx;
+            entry.raw_gy = imu.gy;
+            entry.raw_gz = imu.gz;
+            entry.has_raw_imu = true;
+        }
+        if (hasGpsThisTick) {
+            entry.raw_gps_x = gpsE[0];
+            entry.raw_gps_y = gpsE[1];
+            entry.raw_gps_z = gpsE[2];
+            entry.has_raw_gps = true;
+        }
+        if (hasMagThisTick) {
+            entry.raw_mx = magV[0];
+            entry.raw_my = magV[1];
+            entry.raw_mz = magV[2];
+            entry.has_raw_mag = true;
+        }
+        logger_->log(entry);
+    }
 
     return state;
 }

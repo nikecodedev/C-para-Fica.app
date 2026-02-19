@@ -6,6 +6,8 @@
 #include "../math/CoordinateConverter.hpp"
 #include "../math/Quaternion.hpp"
 
+namespace engine { namespace logging { class TrackingLogger; } }
+
 namespace engine {
 namespace core {
 
@@ -70,6 +72,9 @@ public:
     /** Whether engine has enough data to produce valid output. */
     bool isReady() const { return hasImu_; }
 
+    /** Optional logger for tuning. Non-null = log each tick. */
+    void setLogger(logging::TrackingLogger* logger) { logger_ = logger; }
+
     fusion::ExtendedKalmanFilter& getEKF() { return ekf_; }
     const fusion::ExtendedKalmanFilter& getEKF() const { return ekf_; }
 
@@ -99,6 +104,8 @@ private:
 
     double lastAppliedGpsTime_{-1e9};  ///< Avoid double-applying same GPS
     double lastAppliedMagTime_{-1e9};
+
+    logging::TrackingLogger* logger_{nullptr};
 };
 
 }  // namespace core
