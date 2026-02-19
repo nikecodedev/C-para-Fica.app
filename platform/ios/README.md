@@ -48,3 +48,7 @@ engine::core::TrackingState state = accessManager.tick(t);
 - **CoreMotion magnetometer** → µT → `pushMag`
 
 Units: Accel (m/s²), Gyro (rad/s), Mag (µT) — engine expects SI.
+
+## Subscription (StoreKit)
+
+Use `StoreKitSubscriptionManager` for IAP. Wire `onStatusChanged` to `accessManager.setSubscriptionActive`.
