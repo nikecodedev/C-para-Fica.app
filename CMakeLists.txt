@@ -47,5 +47,18 @@ target_link_libraries(logging_test PRIVATE engine_core)
 
 add_executable(access_manager_test engine/tests/test_access_manager.cpp)
 target_link_libraries(access_manager_test PRIVATE engine_core)
+
+add_library(app_localization
+    app/localization/Translations.cpp
+    app/localization/Localizer.cpp
+    app/localization/LocaleDetector.cpp
+)
+target_include_directories(app_localization PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/app
+)
+
+add_executable(localization_test app/tests/test_localization.cpp)
+target_link_libraries(localization_test PRIVATE app_localization)
 enable_testing()
 add_test(NAME EKFTest COMMAND engine_test)
