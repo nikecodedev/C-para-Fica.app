@@ -66,6 +66,18 @@ target_include_directories(app_localization PUBLIC
 add_executable(localization_test app/tests/test_localization.cpp)
 target_link_libraries(localization_test PRIVATE app_localization)
 
+add_library(app_ui
+    app/ui/FirstBuildIntegration.cpp
+)
+target_include_directories(app_ui PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/app
+)
+target_link_libraries(app_ui PUBLIC engine_core engine_config engine_logging)
+
+add_executable(first_build_test app/tests/test_first_build.cpp)
+target_link_libraries(first_build_test PRIVATE app_ui)
+
 add_executable(unit_converter_test engine/tests/test_unit_converter.cpp)
 target_link_libraries(unit_converter_test PRIVATE engine_config)
 
@@ -83,3 +95,4 @@ add_test(NAME EKFMathTest COMMAND ekf_math_test)
 add_test(NAME UnitConverterTest COMMAND unit_converter_test)
 add_test(NAME ReplayTest COMMAND replay_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
 add_test(NAME SimulatorTest COMMAND simulator_test)
+add_test(NAME FirstBuildTest COMMAND first_build_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
