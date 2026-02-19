@@ -96,3 +96,15 @@ add_test(NAME UnitConverterTest COMMAND unit_converter_test)
 add_test(NAME ReplayTest COMMAND replay_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
 add_test(NAME SimulatorTest COMMAND simulator_test)
 add_test(NAME FirstBuildTest COMMAND first_build_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+
+add_library(engine_audio
+    engine/audio/AudioEngine.cpp
+)
+target_include_directories(engine_audio PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/audio
+)
+
+add_executable(audio_interface_test engine/audio/tests/test_audio_interfaces.cpp)
+target_link_libraries(audio_interface_test PRIVATE engine_audio)
+add_test(NAME AudioInterfaceTest COMMAND audio_interface_test)
