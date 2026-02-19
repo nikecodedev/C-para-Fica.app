@@ -7,30 +7,24 @@ namespace engine {
 namespace audio {
 
 /**
- * Voice Agent interface for real-time voice commands.
- * Platform implements via Deepgram streaming API.
- * No iOS/Android SDK calls here—platform layer does WebSocket/audio capture.
+ * Voice Agent interface. Captures device audio, sends to Deepgram for transcription.
+ * Returns command string to engine via onCommand callback. No iOS/Android SDK calls here.
  */
 class IVoiceAgent {
 public:
     virtual ~IVoiceAgent() = default;
 
-    /** Callback: transcribed text from user speech. */
-    using OnTranscript = std::function<void(const std::string& text)>;
+    /** Callback: transcribed command from user speech. Engine registers via setOnCommand. */
+    using OnCommand = std::function<void(const std::string& command)>;
 
-    /** Callback: error or status. */
-    using OnError = std::function<void(const std::string& message)>;
-
-    /**
-     * Start listening. Platform captures mic, streams to Deepgram, invokes OnTranscript.
-     */
-    virtual void startListening(OnTranscript onTranscript, OnError onError) = 0;
+    /** Start listening. Platform captures mic, streams to Deepgram API. */
+    virtual void startListening() = 0;
 
     /** Stop listening. */
     virtual void stopListening() = 0;
 
-    /** Whether currently listening. */
-    virtual bool isListening() const = 0;
+    /** Register callback to receive transcribed commands. */
+    virtual void setOnCommand(OnCommand callback) = 0;
 };
 
 }  // namespace audio

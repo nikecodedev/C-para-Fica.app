@@ -8,19 +8,16 @@
 
 class StubTTS : public engine::audio::ITextToSpeech {
 public:
-    void synthesize(const std::string&, OnComplete callback) override {
-        std::vector<uint8_t> empty;
-        callback(true, empty);
-    }
-    void cancel() override {}
-    bool isBusy() const override { return false; }
+    void speak(const std::string&) override {}
+    void setLanguage(const std::string&) override {}
+    void setVoice(const std::string&) override {}
 };
 
 class StubVoiceAgent : public engine::audio::IVoiceAgent {
 public:
-    void startListening(OnTranscript /*onTranscript*/, OnError /*onError*/) override {}
+    void startListening() override {}
     void stopListening() override {}
-    bool isListening() const override { return false; }
+    void setOnCommand(OnCommand) override {}
 };
 
 int main() {
