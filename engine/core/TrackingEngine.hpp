@@ -69,6 +69,12 @@ public:
      */
     TrackingState tick(double timestamp);
 
+    /**
+     * GPS-only mode: position from latest GPS, zero velocity, identity orientation.
+     * No IMU/mag fusion. Used when subscription inactive.
+     */
+    TrackingState tickGpsOnly(double timestamp);
+
     /** Whether engine has enough data to produce valid output. */
     bool isReady() const { return hasImu_; }
 

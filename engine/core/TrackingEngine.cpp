@@ -212,5 +212,30 @@ TrackingState TrackingEngine::tick(double timestamp) {
     return state;
 }
 
+TrackingState TrackingEngine::tickGpsOnly(double timestamp) {
+    TrackingState state;
+    state.timestamp = timestamp;
+    state.px = state.py = state.pz = 0.0;
+    state.vx = state.vy = state.vz = 0.0;
+    state.qw = 1.0;
+    state.qx = state.qy = state.qz = 0.0;
+
+    GPSSample gps;
+    if (!getGpsAt(timestamp, gps)) return state;
+
+    if (!originSet_) {
+        setOrigin(gps.lat_deg, gps.lon_deg, gps.alt_m);
+    }
+    const double lat_rad = math::CoordinateConverter::degToRad(gps.lat_deg);
+    const double lon_rad = math::CoordinateConverter::degToRad(gps.lon_deg);
+    math::ENU enu = converter_.geodeticToENU(lat_rad, lon_rad, gps.alt_m);
+
+    state.px = enu.east;
+    state.py = enu.north;
+    state.pz = enu.up;
+
+    return state;
+}
+
 }  // namespace core
 }  // namespace engine

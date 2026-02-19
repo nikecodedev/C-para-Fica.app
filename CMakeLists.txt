@@ -33,6 +33,7 @@ target_include_directories(engine_logging PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_library(engine_core
     engine/core/TrackingEngine.cpp
+    engine/core/EngineAccessManager.cpp
 )
 target_include_directories(engine_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(engine_core PUBLIC engine_fusion engine_math engine_logging)
@@ -43,5 +44,8 @@ target_link_libraries(tracking_test PRIVATE engine_core engine_sensors)
 
 add_executable(logging_test engine/tests/test_logging.cpp)
 target_link_libraries(logging_test PRIVATE engine_core)
+
+add_executable(access_manager_test engine/tests/test_access_manager.cpp)
+target_link_libraries(access_manager_test PRIVATE engine_core)
 enable_testing()
 add_test(NAME EKFTest COMMAND engine_test)
