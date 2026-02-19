@@ -4,6 +4,7 @@
 #include "engine/audio/tts/ITextToSpeech.hpp"
 #include "ITrackingController.hpp"
 #include "localization/Localizer.hpp"
+#include "VoiceCommandQueue.hpp"
 #include <memory>
 #include <string>
 #include <functional>
@@ -16,6 +17,9 @@ namespace audio {
  * - "start_tracking" / "start tracking" → controller.startTracking()
  * - "stop_tracking" / "stop tracking" → controller.stopTracking()
  * - TTS feedback: speak speed, distance, trajectory updates
+ *
+ * Performance: Voice commands are queued and processed asynchronously.
+ * Call drainVoiceCommands() from the main/tick thread to avoid blocking the 100Hz loop.
  */
 class AudioTrackingIntegration {
 public:
@@ -56,14 +60,34 @@ public:
     static bool isStartTracking(const std::string& cmd);
     static bool isStopTracking(const std::string& cmd);
 
+    /**
+     * Enable async processing: voice callback enqueues; no work on WebSocket thread.
+     * Call drainVoiceCommands() from main/tick thread to process.
+     */
+    void setUseAsyncCommands(bool use) { useAsyncCommands_ = use; }
+    bool getUseAsyncCommands() const { return useAsyncCommands_; }
+
+    /**
+     * Drain queued voice commands. Call from 100Hz tick or main loop.
+     * Non-blocking; processes commands without blocking the loop.
+     */
+    void drainVoiceCommands();
+
+    /** Access queue for size/debug. */
+    VoiceCommandQueue& getCommandQueue() { return commandQueue_; }
+
 private:
     void onVoiceCommand(const std::string& cmd);
+
+    void executeCommand(const std::string& cmd);
 
     ITrackingController* controller_{nullptr};
     std::function<void()> onStart_;
     std::function<void()> onStop_;
     engine::audio::IVoiceAgent* voiceAgent_{nullptr};
     engine::audio::ITextToSpeech* tts_{nullptr};
+    bool useAsyncCommands_{true};
+    VoiceCommandQueue commandQueue_;
 };
 
 }  // namespace audio

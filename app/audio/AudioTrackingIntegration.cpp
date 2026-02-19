@@ -76,6 +76,14 @@ bool AudioTrackingIntegration::isStopTracking(const std::string& cmd) {
 }
 
 void AudioTrackingIntegration::onVoiceCommand(const std::string& cmd) {
+    if (useAsyncCommands_) {
+        commandQueue_.push(cmd);
+    } else {
+        executeCommand(cmd);
+    }
+}
+
+void AudioTrackingIntegration::executeCommand(const std::string& cmd) {
     if (isStartTracking(cmd)) {
         if (controller_) controller_->startTracking();
         else if (onStart_) onStart_();
@@ -83,6 +91,10 @@ void AudioTrackingIntegration::onVoiceCommand(const std::string& cmd) {
         if (controller_) controller_->stopTracking();
         else if (onStop_) onStop_();
     }
+}
+
+void AudioTrackingIntegration::drainVoiceCommands() {
+    commandQueue_.drain([this](const std::string& cmd) { executeCommand(cmd); });
 }
 
 }  // namespace audio

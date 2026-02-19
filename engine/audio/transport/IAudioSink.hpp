@@ -9,12 +9,15 @@ namespace audio {
 /**
  * Platform-agnostic audio output sink for playback.
  * Platform implements using AVAudioEngine (iOS), AudioTrack (Android).
+ *
+ * Performance: play() must return immediately. Schedule buffer for playback;
+ * do not block on actual playback. Must not run on 100Hz tick thread.
  */
 class IAudioSink {
 public:
     virtual ~IAudioSink() = default;
 
-    /** Play PCM audio. Format: linear16, mono, sample rate from config. */
+    /** Play PCM audio. Format: linear16, mono, sample rate from config. Non-blocking. */
     virtual void play(const std::vector<std::uint8_t>& pcmData) = 0;
 
     /** Stop playback. */

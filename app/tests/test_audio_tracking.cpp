@@ -58,17 +58,40 @@ static void test_voice_to_start_stop() {
     AudioTrackingIntegration integration;
     integration.setVoiceAgent(agent.get());
     integration.setTrackingController(ctrl.get());
+    integration.setUseAsyncCommands(true);
+
+    agent->fireCommand("start tracking");
+    assert(startCount == 0);
+    integration.drainVoiceCommands();
+    assert(startCount == 1);
+
+    agent->fireCommand("stop_tracking");
+    assert(stopCount == 0);
+    integration.drainVoiceCommands();
+    assert(stopCount == 1);
+
+    agent->fireCommand("unknown command");
+    integration.drainVoiceCommands();
+    assert(startCount == 1 && stopCount == 1);
+
+    std::cout << "voice to start/stop (async): OK" << std::endl;
+}
+
+static void test_voice_sync_mode() {
+    auto agent = std::make_unique<StubVoiceAgent>();
+    auto ctrl = std::make_unique<CallbackTrackingController>();
+    int startCount = 0;
+    ctrl->setOnStart([&]() { startCount++; });
+
+    AudioTrackingIntegration integration;
+    integration.setVoiceAgent(agent.get());
+    integration.setTrackingController(ctrl.get());
+    integration.setUseAsyncCommands(false);
 
     agent->fireCommand("start tracking");
     assert(startCount == 1);
 
-    agent->fireCommand("stop_tracking");
-    assert(stopCount == 1);
-
-    agent->fireCommand("unknown command");
-    assert(startCount == 1 && stopCount == 1);
-
-    std::cout << "voice to start/stop: OK" << std::endl;
+    std::cout << "voice sync mode: OK" << std::endl;
 }
 
 static void test_tts_feedback() {
@@ -135,6 +158,7 @@ int main() {
     test_tts_feedback();
     test_tts_localization_sync();
     test_speak_feedback_localized();
+    test_voice_sync_mode();
     std::cout << "All audio-tracking tests passed." << std::endl;
     return 0;
 }

@@ -8,6 +8,8 @@ FirstBuildIntegration::FirstBuildIntegration() {
 }
 
 void FirstBuildIntegration::tick(double timestamp) {
+    if (audioIntegration_)
+        audioIntegration_->drainVoiceCommands();
     auto state = engine_.tick(timestamp);
 
     double v = std::sqrt(state.vx * state.vx + state.vy * state.vy + state.vz * state.vz);

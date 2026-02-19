@@ -3,6 +3,7 @@
 #include "../../engine/core/EngineAccessManager.hpp"
 #include "../../engine/config/UnitConverter.hpp"
 #include "../../engine/logging/TrackingLogger.hpp"
+#include "audio/AudioTrackingIntegration.hpp"
 #include <vector>
 #include <cmath>
 
@@ -21,8 +22,16 @@ public:
     engine::core::EngineAccessManager& getEngine() { return engine_; }
     const engine::core::EngineAccessManager& getEngine() const { return engine_; }
 
-    /** Call at 100Hz from platform timer. */
+    /**
+     * Call at 100Hz from platform timer.
+     * Drains voice commands first (non-blocking) so audio never blocks the loop.
+     */
     void tick(double timestamp);
+
+    /** Optional: set to drain voice commands at start of each tick. */
+    void setAudioIntegration(app::audio::AudioTrackingIntegration* integration) {
+        audioIntegration_ = integration;
+    }
 
     /** Set subscription (true = 100Hz fusion). */
     void setSubscriptionActive(bool active) { engine_.setSubscriptionActive(active); }
@@ -60,6 +69,7 @@ private:
     bool hasLastPos_{false};
 
     std::vector<std::pair<double, double>> trajectory_;
+    app::audio::AudioTrackingIntegration* audioIntegration_{nullptr};
 };
 
 }  // namespace ui

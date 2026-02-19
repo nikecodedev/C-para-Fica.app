@@ -10,6 +10,7 @@ namespace audio {
 /**
  * Platform-agnostic audio input source (microphone).
  * Platform captures and pushes chunks via onAudioData.
+ * Streaming: onAudioData called with small chunks; caller must not block.
  */
 class IAudioSource {
 public:

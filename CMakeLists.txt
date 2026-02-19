@@ -73,11 +73,12 @@ target_include_directories(app_ui PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/app
 )
-target_link_libraries(app_ui PUBLIC engine_core engine_config engine_logging)
+target_link_libraries(app_ui PUBLIC engine_core engine_config engine_logging app_audio)
 
 add_library(app_audio
     app/audio/AudioTrackingIntegration.cpp
     app/audio/TTSLocalizationSync.cpp
+    app/audio/VoiceCommandQueue.cpp
 )
 target_include_directories(app_audio PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}

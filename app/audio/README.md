@@ -2,6 +2,18 @@
 
 Connects voice commands to the tracking engine, TTS feedback, and i18n.
 
+## Performance (100Hz Loop)
+
+Voice commands are **queued** and processed asynchronously. Call `drainVoiceCommands()` from the same thread that runs the 100Hz tick:
+
+```cpp
+firstBuild.setAudioIntegration(&integration);
+// In 100Hz timer:
+firstBuild.tick(timestamp);  // drains queue, then engine tick
+```
+
+`setUseAsyncCommands(true)` (default): voice callback enqueues only; no work on WebSocket thread.
+
 ## Voice Commands
 
 | Command | Action |
