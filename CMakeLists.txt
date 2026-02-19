@@ -99,6 +99,8 @@ add_test(NAME FirstBuildTest COMMAND first_build_test WORKING_DIRECTORY ${CMAKE_
 
 add_library(engine_audio
     engine/audio/AudioEngine.cpp
+    engine/audio/tts/DeepgramTTS.cpp
+    engine/audio/voice_agent/DeepgramVoiceAgent.cpp
 )
 target_include_directories(engine_audio PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -108,3 +110,7 @@ target_include_directories(engine_audio PUBLIC
 add_executable(audio_interface_test engine/audio/tests/test_audio_interfaces.cpp)
 target_link_libraries(audio_interface_test PRIVATE engine_audio)
 add_test(NAME AudioInterfaceTest COMMAND audio_interface_test)
+
+add_executable(deepgram_test engine/audio/tests/test_deepgram.cpp)
+target_link_libraries(deepgram_test PRIVATE engine_audio)
+add_test(NAME DeepgramTest COMMAND deepgram_test)
