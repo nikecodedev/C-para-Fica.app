@@ -26,7 +26,15 @@ add_library(engine_fusion
 target_include_directories(engine_fusion PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(engine_fusion PUBLIC engine_math)
 
+add_library(engine_core
+    engine/core/TrackingEngine.cpp
+)
+target_include_directories(engine_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_link_libraries(engine_core PUBLIC engine_fusion engine_math)
+
 add_executable(engine_test engine/tests/test_ekf.cpp)
+add_executable(tracking_test engine/tests/test_tracking_engine.cpp)
+target_link_libraries(tracking_test PRIVATE engine_core engine_sensors)
 target_link_libraries(engine_test PRIVATE engine_fusion engine_sensors)
 enable_testing()
 add_test(NAME EKFTest COMMAND engine_test)
