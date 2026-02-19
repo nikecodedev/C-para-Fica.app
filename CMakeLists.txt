@@ -3,6 +3,11 @@ project(fica-motor LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
+add_library(engine_config
+    engine/config/UnitConverter.cpp
+)
+target_include_directories(engine_config PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
 add_library(engine_math
     engine/math/CoordinateConverter.cpp
     engine/math/Quaternion.cpp
@@ -60,5 +65,8 @@ target_include_directories(app_localization PUBLIC
 
 add_executable(localization_test app/tests/test_localization.cpp)
 target_link_libraries(localization_test PRIVATE app_localization)
+
+add_executable(unit_converter_test engine/tests/test_unit_converter.cpp)
+target_link_libraries(unit_converter_test PRIVATE engine_config)
 enable_testing()
 add_test(NAME EKFTest COMMAND engine_test)
