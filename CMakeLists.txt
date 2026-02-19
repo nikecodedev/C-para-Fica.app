@@ -75,6 +75,19 @@ target_include_directories(app_ui PUBLIC
 )
 target_link_libraries(app_ui PUBLIC engine_core engine_config engine_logging)
 
+add_library(app_audio
+    app/audio/AudioTrackingIntegration.cpp
+)
+target_include_directories(app_audio PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/app
+)
+target_link_libraries(app_audio PUBLIC engine_audio)
+
+add_executable(audio_tracking_test app/tests/test_audio_tracking.cpp)
+target_link_libraries(audio_tracking_test PRIVATE app_audio)
+add_test(NAME AudioTrackingTest COMMAND audio_tracking_test)
+
 add_executable(first_build_test app/tests/test_first_build.cpp)
 target_link_libraries(first_build_test PRIVATE app_ui)
 
