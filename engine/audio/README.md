@@ -58,6 +58,14 @@ engine.setTTS(std::make_unique<DeepgramTTS>(http, sink, config));
 engine.setVoiceAgent(std::make_unique<DeepgramVoiceAgent>(ws, source, timer, config));
 ```
 
+## Localization (PT/EN)
+
+TTS supports Portuguese and English. Use `TTSConstants.hpp`:
+- **Lang::EN** / **Lang::PT**
+- **Voice::ASTERIA_EN**, **Voice::LUNA_PT**, etc.
+
+App layer uses `TTSLocalizationSync` to sync with `Localizer` (see `app/audio/README.md`).
+
 ## API Key
 
 Never hardcode. Platform layer loads from:

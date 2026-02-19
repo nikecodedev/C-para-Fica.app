@@ -1,4 +1,5 @@
 #include "AudioTrackingIntegration.hpp"
+#include "localization/LocalizationKeys.hpp"
 #include <algorithm>
 #include <cctype>
 #include <sstream>
@@ -28,6 +29,22 @@ void AudioTrackingIntegration::speakFeedback(double speedDisplay, double distanc
     oss << std::fixed;
     oss << "Speed " << speedDisplay << " " << (speedUnit ? speedUnit : "km/h");
     oss << ". Distance " << distanceDisplay << " " << (distanceUnit ? distanceUnit : "km");
+    tts_->speak(oss.str());
+}
+
+void AudioTrackingIntegration::speakFeedbackLocalized(const app::localization::Localizer& localizer,
+                                                      double speedDisplay, double distanceDisplay,
+                                                      const char* speedUnit, const char* distanceUnit) {
+    if (!tts_) return;
+
+    std::string speedLabel = localizer.t(app::localization::Keys::SPEED);
+    std::string distanceLabel = localizer.t(app::localization::Keys::DISTANCE);
+
+    std::ostringstream oss;
+    oss.precision(1);
+    oss << std::fixed;
+    oss << speedLabel << " " << speedDisplay << " " << (speedUnit ? speedUnit : "km/h");
+    oss << ". " << distanceLabel << " " << distanceDisplay << " " << (distanceUnit ? distanceUnit : "km");
     tts_->speak(oss.str());
 }
 

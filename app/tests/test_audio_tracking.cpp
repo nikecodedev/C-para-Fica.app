@@ -3,6 +3,8 @@
  */
 #include "app/audio/AudioTrackingIntegration.hpp"
 #include "app/audio/CallbackTrackingController.hpp"
+#include "app/audio/TTSLocalizationSync.hpp"
+#include "localization/Localizer.hpp"
 #include "engine/audio/voice_agent/IVoiceAgent.hpp"
 #include "engine/audio/tts/ITextToSpeech.hpp"
 #include <iostream>
@@ -22,9 +24,11 @@ public:
 class StubTTS : public engine::audio::ITextToSpeech {
 public:
     void speak(const std::string& text) override { lastSpoken_ = text; }
-    void setLanguage(const std::string&) override {}
-    void setVoice(const std::string&) override {}
+    void setLanguage(const std::string& lang) override { language_ = lang; }
+    void setVoice(const std::string& voice) override { voice_ = voice; }
     std::string lastSpoken_;
+    std::string language_;
+    std::string voice_;
 };
 
 static void test_normalize() {
@@ -80,11 +84,57 @@ static void test_tts_feedback() {
     std::cout << "TTS feedback: OK" << std::endl;
 }
 
+static void test_tts_localization_sync() {
+    auto tts = std::make_unique<StubTTS>();
+    app::localization::Localizer localizer;
+
+    localizer.setLocale("en");
+    TTSLocalizationSync::sync(localizer, tts.get());
+    assert(tts->language_ == "en");
+    assert(tts->voice_ == "aura-asteria-en");
+
+    localizer.setLocale("pt");
+    TTSLocalizationSync::sync(localizer, tts.get());
+    assert(tts->language_ == "pt");
+    assert(tts->voice_ == "aura-luna-pt");
+
+    TTSLocalizationSync::syncFromSystem("pt-BR", tts.get());
+    assert(tts->language_ == "pt");
+    assert(tts->voice_ == "aura-luna-pt");
+
+    TTSLocalizationSync::syncFromSystem("en-US", tts.get());
+    assert(tts->language_ == "en");
+    assert(tts->voice_ == "aura-asteria-en");
+
+    std::cout << "TTS localization sync: OK" << std::endl;
+}
+
+static void test_speak_feedback_localized() {
+    auto tts = std::make_unique<StubTTS>();
+    app::localization::Localizer localizer;
+    AudioTrackingIntegration integration;
+    integration.setTTS(tts.get());
+
+    localizer.setLocale("en");
+    integration.speakFeedbackLocalized(localizer, 10.0, 0.5, "km/h", "km");
+    assert(tts->lastSpoken_.find("Speed") != std::string::npos);
+    assert(tts->lastSpoken_.find("Distance") != std::string::npos);
+
+    localizer.setLocale("pt");
+    integration.speakFeedbackLocalized(localizer, 10.0, 0.5, "km/h", "km");
+    assert(tts->lastSpoken_.find("Velocidade") != std::string::npos);
+    assert(tts->lastSpoken_.find("Distância") != std::string::npos);
+
+    std::cout << "Speak feedback localized: OK" << std::endl;
+}
+
 int main() {
     test_normalize();
     test_command_matching();
     test_voice_to_start_stop();
     test_tts_feedback();
+    test_tts_localization_sync();
+    test_speak_feedback_localized();
     std::cout << "All audio-tracking tests passed." << std::endl;
     return 0;
 }

@@ -77,12 +77,13 @@ target_link_libraries(app_ui PUBLIC engine_core engine_config engine_logging)
 
 add_library(app_audio
     app/audio/AudioTrackingIntegration.cpp
+    app/audio/TTSLocalizationSync.cpp
 )
 target_include_directories(app_audio PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/app
 )
-target_link_libraries(app_audio PUBLIC engine_audio)
+target_link_libraries(app_audio PUBLIC engine_audio app_localization)
 
 add_executable(audio_tracking_test app/tests/test_audio_tracking.cpp)
 target_link_libraries(audio_tracking_test PRIVATE app_audio)

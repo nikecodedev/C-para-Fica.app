@@ -3,6 +3,7 @@
 #include "engine/audio/voice_agent/IVoiceAgent.hpp"
 #include "engine/audio/tts/ITextToSpeech.hpp"
 #include "ITrackingController.hpp"
+#include "localization/Localizer.hpp"
 #include <memory>
 #include <string>
 #include <functional>
@@ -39,6 +40,14 @@ public:
      */
     void speakFeedback(double speedDisplay, double distanceDisplay,
                        const char* speedUnit, const char* distanceUnit);
+
+    /**
+     * Speak feedback with localized labels from Localizer.
+     * Uses Keys::SPEED and Keys::DISTANCE for PT/EN.
+     */
+    void speakFeedbackLocalized(const app::localization::Localizer& localizer,
+                                double speedDisplay, double distanceDisplay,
+                                const char* speedUnit, const char* distanceUnit);
 
     /** Normalize command for matching (trim, lowercase, collapse spaces). */
     static std::string normalizeCommand(const std::string& raw);

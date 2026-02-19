@@ -1,6 +1,6 @@
 # Audio–Tracking Integration
 
-Connects voice commands to the tracking engine and TTS feedback.
+Connects voice commands to the tracking engine, TTS feedback, and i18n.
 
 ## Voice Commands
 
@@ -45,4 +45,27 @@ integration.setTTS(audioEngine.getTTS());
 // Periodic TTS feedback (when tracking active)
 integration.speakFeedback(ui.getSpeedDisplay(), ui.getDistanceDisplay(),
                          ui.getSpeedUnit(), ui.getDistanceUnit());
+
+// Localized feedback (PT/EN from Localizer)
+integration.speakFeedbackLocalized(localizer, speed, distance, speedUnit, distUnit);
+```
+
+## Localization (PT/EN)
+
+Use **TTSLocalizationSync** to keep TTS in sync with the app locale:
+
+```cpp
+// On startup or when locale changes
+localizer.setLocaleFromSystem(LocaleDetector::getSystemLocale());
+TTSLocalizationSync::sync(localizer, audioEngine.getTTS());
+
+// Or directly from system locale
+TTSLocalizationSync::syncFromSystem("pt-BR", audioEngine.getTTS());
+```
+
+Also update engine config for Voice Agent (STT language):
+```cpp
+config.language = localizer.getLocale();
+config.deepgram.language = config.language;
+audioEngine.setConfig(config);
 ```
