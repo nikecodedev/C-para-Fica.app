@@ -1,4 +1,5 @@
 #include "DeepgramTTS.hpp"
+#include "../logging/AudioLogger.hpp"
 #include <sstream>
 #include <algorithm>
 #include <cassert>
@@ -46,34 +47,31 @@ DeepgramTTS::DeepgramTTS(std::shared_ptr<IHttpTransport> http,
 
 void DeepgramTTS::speak(const std::string& text) {
     if (text.empty()) return;
-    if (config_.apiKey.empty()) {
-        if (logger_) logger_->log(IAudioLogger::Level::Error, "DeepgramTTS: API key not set");
+    std::string key = config_.deepgram.apiKey.empty() ? config_.apiKey : config_.deepgram.apiKey;
+    if (key.empty()) {
+        if (IAudioLogger* L = log_.getDelegate())
+            L->log(IAudioLogger::Level::Error, "DeepgramTTS: API key not set");
         return;
     }
+
+    log_.logTtsRequest(text);
+    int startMs = DeepgramLogger::nowMs();
 
     std::string url = buildRequestUrl();
     std::vector<std::uint8_t> body = buildRequestBody(text);
 
     std::vector<IHttpTransport::Header> headers = {
-        {"Authorization", "Token " + config_.apiKey},
+        {"Authorization", "Token " + key},
         {"Content-Type", "application/json"}
     };
 
-    http_->post(url, headers, body, [this, text](bool success, int statusCode, const std::vector<std::uint8_t>& responseBody) {
-        if (!success) {
-            if (logger_) {
-                std::string msg = "DeepgramTTS: HTTP failed status=" + std::to_string(statusCode);
-                logger_->log(IAudioLogger::Level::Error, msg);
-            }
-            return;
-        }
-        if (statusCode != 200) {
-            if (logger_) {
-                std::string msg = "DeepgramTTS: API error status=" + std::to_string(statusCode);
-                logger_->log(IAudioLogger::Level::Error, msg);
-            }
-            return;
-        }
+    http_->post(url, headers, body, [this, startMs](bool success, int statusCode, const std::vector<std::uint8_t>& responseBody) {
+        int latencyMs = DeepgramLogger::nowMs() - startMs;
+        log_.logApiResponse(success && statusCode == 200, statusCode, responseBody.size(), latencyMs);
+        log_.logLatency("TTS request", latencyMs);
+
+        if (!success) return;
+        if (statusCode != 200) return;
         if (!responseBody.empty()) {
             audioSink_->play(responseBody);
         }
@@ -89,12 +87,13 @@ void DeepgramTTS::setVoice(const std::string& voice) {
 }
 
 std::string DeepgramTTS::buildRequestUrl() const {
-    int rate = (config_.sampleRate == 8000 || config_.sampleRate == 24000)
-                   ? config_.sampleRate
-                   : 24000;
+    std::string voice = config_.deepgram.ttsVoice.empty() ? config_.ttsVoice : config_.deepgram.ttsVoice;
+    int rate = config_.deepgram.ttsSampleRate;
+    if (rate != 8000 && rate != 24000)
+        rate = (config_.sampleRate == 8000 || config_.sampleRate == 24000) ? config_.sampleRate : 24000;
     std::ostringstream oss;
     oss << DEEPGRAM_TTS_BASE
-        << "?model=" << config_.ttsVoice
+        << "?model=" << voice
         << "&encoding=linear16"
         << "&sample_rate=" << rate;
     return oss.str();

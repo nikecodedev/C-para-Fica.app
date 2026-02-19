@@ -1,4 +1,5 @@
 #include "DeepgramVoiceAgent.hpp"
+#include "../logging/AudioLogger.hpp"
 #include <sstream>
 #include <algorithm>
 #include <cassert>
@@ -41,6 +42,7 @@ void DeepgramVoiceAgent::startListening() {
         /* Deepgram typically sends text JSON; ignore binary */
     });
     ws_->setOnOpen([this]() {
+        log_.logStreamEvent("opened");
         timer_->start(KEEPALIVE_MS, [this]() { sendKeepAlive(); });
         audioSource_->startCapture([this](const std::vector<std::uint8_t>& chunk) {
             onAudioChunk(chunk);
@@ -51,9 +53,7 @@ void DeepgramVoiceAgent::startListening() {
         audioSource_->stopCapture();
         std::lock_guard<std::mutex> lock(mutex_);
         listening_ = false;
-        if (logger_ && !reason.empty()) {
-            logger_->log(IAudioLogger::Level::Info, "DeepgramVoiceAgent: WebSocket closed: " + reason);
-        }
+        log_.logStreamEvent("closed", reason);
     });
 
     connectWebSocket();
@@ -77,24 +77,32 @@ void DeepgramVoiceAgent::setConfig(const AudioConfig& config) {
 }
 
 void DeepgramVoiceAgent::connectWebSocket() {
-    if (config_.apiKey.empty()) {
-        if (logger_) logger_->log(IAudioLogger::Level::Error, "DeepgramVoiceAgent: API key not set");
+    std::string key = config_.deepgram.apiKey.empty() ? config_.apiKey : config_.deepgram.apiKey;
+    if (key.empty()) {
+        if (IAudioLogger* L = log_.getDelegate())
+            L->log(IAudioLogger::Level::Error, "DeepgramVoiceAgent: API key not set");
         return;
     }
 
-    int sampleRate = config_.sampleRate > 0 ? config_.sampleRate : 16000;
+    int sampleRate = config_.deepgram.sttSampleRate > 0
+        ? config_.deepgram.sttSampleRate
+        : (config_.sampleRate > 0 ? config_.sampleRate : 16000);
     std::ostringstream oss;
+    bool interim = config_.deepgram.useInterimResults();
+    int endMs = config_.deepgram.utteranceEndMs();
+    int sr = config_.deepgram.sttSampleRate > 0 ? config_.deepgram.sttSampleRate : sampleRate;
+
     oss << DEEPGRAM_WS_BASE
         << "?encoding=linear16"
-        << "&sample_rate=" << sampleRate
-        << "&language=" << config_.language
-        << "&interim_results=true"
+        << "&sample_rate=" << sr
+        << "&language=" << config_.deepgram.language.empty() ? config_.language : config_.deepgram.language
+        << "&interim_results=" << (interim ? "true" : "false")
         << "&punctuate=true"
         << "&smart_format=true"
-        << "&utterance_end_ms=1000";
+        << "&utterance_end_ms=" << endMs;
 
     std::vector<std::pair<std::string, std::string>> headers = {
-        {"Authorization", "Token " + config_.apiKey}
+        {"Authorization", "Token " + key}
     };
 
     ws_->connect(oss.str(), headers);
@@ -105,6 +113,8 @@ void DeepgramVoiceAgent::onTextMessage(const std::string& text) {
     if (transcript.empty()) return;
 
     if (extractSpeechFinal(text)) {
+        log_.logVoiceCommand(transcript);
+        log_.logApiResponse(true, 200, text.size());
         OnCommand cb;
         {
             std::lock_guard<std::mutex> lock(mutex_);

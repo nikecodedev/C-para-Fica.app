@@ -1,5 +1,6 @@
 #pragma once
 
+#include "DeepgramConfig.hpp"
 #include <string>
 
 namespace engine {
@@ -17,6 +18,17 @@ struct AudioConfig {
     std::string ttsVoice{"aura-asteria-en"};
     int sampleRate{16000};
     bool useSecureStorage{true};
+
+    /** Deepgram-specific settings (mode, defaults). */
+    DeepgramConfig deepgram;
+
+    /** Sync apiKey/language/voice into deepgram for components that use it. */
+    void syncToDeepgram() {
+        deepgram.apiKey = apiKey;
+        deepgram.language = language;
+        deepgram.ttsVoice = ttsVoice;
+        deepgram.sttSampleRate = (sampleRate > 0) ? sampleRate : 16000;
+    }
 };
 
 }  // namespace audio

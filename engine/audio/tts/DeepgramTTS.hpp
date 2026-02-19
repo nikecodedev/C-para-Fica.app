@@ -4,7 +4,7 @@
 #include "../config/AudioConfig.hpp"
 #include "../transport/IHttpTransport.hpp"
 #include "../transport/IAudioSink.hpp"
-#include "../logging/AudioLogger.hpp"
+#include "../logging/DeepgramLogger.hpp"
 #include <memory>
 #include <string>
 
@@ -27,7 +27,7 @@ public:
     void setVoice(const std::string& voice) override;
 
     void setConfig(const AudioConfig& config) { config_ = config; }
-    void setLogger(IAudioLogger* logger) { logger_ = logger; }
+    void setLogger(IAudioLogger* logger) { log_.setDelegate(logger); }
 
 private:
     std::string buildRequestUrl() const;
@@ -36,7 +36,7 @@ private:
     std::shared_ptr<IHttpTransport> http_;
     std::shared_ptr<IAudioSink> audioSink_;
     AudioConfig config_;
-    IAudioLogger* logger_{nullptr};
+    DeepgramLogger log_;
 };
 
 }  // namespace audio

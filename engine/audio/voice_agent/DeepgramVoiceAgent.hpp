@@ -5,7 +5,7 @@
 #include "../transport/IWebSocketTransport.hpp"
 #include "../transport/IAudioSource.hpp"
 #include "../transport/ITimer.hpp"
-#include "../logging/AudioLogger.hpp"
+#include "../logging/DeepgramLogger.hpp"
 #include <memory>
 #include <mutex>
 
@@ -32,7 +32,7 @@ public:
     void setOnCommand(OnCommand callback) override;
 
     void setConfig(const AudioConfig& config);
-    void setLogger(IAudioLogger* logger) { logger_ = logger; }
+    void setLogger(IAudioLogger* logger) { log_.setDelegate(logger); }
 
 private:
     void connectWebSocket();
@@ -46,7 +46,7 @@ private:
     std::shared_ptr<IAudioSource> audioSource_;
     std::shared_ptr<ITimer> timer_;
     AudioConfig config_;
-    IAudioLogger* logger_{nullptr};
+    DeepgramLogger log_;
 
     OnCommand onCommand_;
     std::mutex mutex_;
