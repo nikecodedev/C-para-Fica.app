@@ -68,5 +68,18 @@ target_link_libraries(localization_test PRIVATE app_localization)
 
 add_executable(unit_converter_test engine/tests/test_unit_converter.cpp)
 target_link_libraries(unit_converter_test PRIVATE engine_config)
+
+add_executable(ekf_math_test engine/tests/test_ekf_math.cpp)
+target_link_libraries(ekf_math_test PRIVATE engine_math)
+
+add_executable(replay_test engine/tests/test_replay.cpp)
+target_link_libraries(replay_test PRIVATE engine_core engine_logging)
+
+add_executable(simulator_test engine/tests/test_simulator.cpp)
+target_link_libraries(simulator_test PRIVATE engine_core)
 enable_testing()
 add_test(NAME EKFTest COMMAND engine_test)
+add_test(NAME EKFMathTest COMMAND ekf_math_test)
+add_test(NAME UnitConverterTest COMMAND unit_converter_test)
+add_test(NAME ReplayTest COMMAND replay_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+add_test(NAME SimulatorTest COMMAND simulator_test)
