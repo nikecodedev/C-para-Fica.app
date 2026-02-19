@@ -111,6 +111,14 @@ add_executable(audio_interface_test engine/audio/tests/test_audio_interfaces.cpp
 target_link_libraries(audio_interface_test PRIVATE engine_audio)
 add_test(NAME AudioInterfaceTest COMMAND audio_interface_test)
 
+add_library(engine_audio_tests
+    engine/audio/tests/FileAudioSource.cpp
+)
+target_include_directories(engine_audio_tests PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/engine/audio
+)
+
 add_executable(deepgram_test engine/audio/tests/test_deepgram.cpp)
-target_link_libraries(deepgram_test PRIVATE engine_audio)
-add_test(NAME DeepgramTest COMMAND deepgram_test)
+target_link_libraries(deepgram_test PRIVATE engine_audio engine_audio_tests)
+add_test(NAME DeepgramTest COMMAND deepgram_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})

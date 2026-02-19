@@ -46,7 +46,10 @@ public:
     void connect(const std::string&, const std::vector<std::pair<std::string, std::string>>&) override {
         if (onOpen_) onOpen_();
     }
-    void sendBinary(const std::vector<std::uint8_t>&) override {}
+    void sendBinary(const std::vector<std::uint8_t>& data) override {
+        binarySendCount_++;
+        totalBytesSent_ += data.size();
+    }
     void sendText(const std::string&) override {}
     void close() override {
         if (onClose_) onClose_("closed");
@@ -57,6 +60,8 @@ public:
     void setOnOpen(OnOpen cb) override { onOpen_ = cb; }
     void setOnClose(OnClose cb) override { onClose_ = cb; }
     bool connected_{true};
+    std::atomic<int> binarySendCount_{0};
+    std::atomic<size_t> totalBytesSent_{0};
     OnText onText_;
     OnBinary onBinary_;
     OnOpen onOpen_;
