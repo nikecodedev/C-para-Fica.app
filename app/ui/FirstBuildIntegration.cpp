@@ -10,7 +10,8 @@ FirstBuildIntegration::FirstBuildIntegration() {
 void FirstBuildIntegration::tick(double timestamp) {
     if (audioIntegration_)
         audioIntegration_->drainVoiceCommands();
-    auto state = engine_.tick(timestamp);
+    lastState_ = engine_.tick(timestamp);
+    auto& state = lastState_;
 
     double v = std::sqrt(state.vx * state.vx + state.vy * state.vy + state.vz * state.vz);
     speedDisplay_ = unitConv_.speedToDisplay(v);

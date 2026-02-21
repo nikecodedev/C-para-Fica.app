@@ -13,9 +13,11 @@ namespace localization {
  */
 class Localizer {
 public:
-    /** Supported languages */
+    /** Supported languages (USA, UK, Spain, Portugal, Germany) */
     static constexpr const char* LANG_EN = "en";
     static constexpr const char* LANG_PT = "pt";
+    static constexpr const char* LANG_ES = "es";
+    static constexpr const char* LANG_DE = "de";
 
     Localizer();
 

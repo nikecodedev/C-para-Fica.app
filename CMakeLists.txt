@@ -66,6 +66,17 @@ target_include_directories(app_localization PUBLIC
 add_executable(localization_test app/tests/test_localization.cpp)
 target_link_libraries(localization_test PRIVATE app_localization)
 
+add_library(app_license
+    app/license/LicenseKeyWithValidity.cpp
+)
+target_include_directories(app_license PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/app
+)
+
+add_executable(license_test app/tests/test_license_key.cpp)
+target_link_libraries(license_test PRIVATE app_license)
+
 add_library(app_ui
     app/ui/FirstBuildIntegration.cpp
 )
@@ -137,3 +148,17 @@ target_include_directories(engine_audio_tests PUBLIC
 add_executable(deepgram_test engine/audio/tests/test_deepgram.cpp)
 target_link_libraries(deepgram_test PRIVATE engine_audio engine_audio_tests)
 add_test(NAME DeepgramTest COMMAND deepgram_test WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+
+# --- Android NDK: libfica_native.so for JNI ---
+if(ANDROID)
+  add_library(fica_native SHARED
+    platform/android/EngineJNI.cpp
+    platform/android/SensorBridge.cpp
+  )
+  target_include_directories(fica_native PRIVATE ${CMAKE_SOURCE_DIR})
+  target_link_libraries(fica_native PRIVATE app_ui)
+  set_target_properties(fica_native PROPERTIES
+    LIBRARY_OUTPUT_NAME fica_native
+    PREFIX "lib"
+  )
+endif()

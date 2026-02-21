@@ -45,8 +45,8 @@ constexpr size_t GPS_BUFFER_SIZE = 16;
 constexpr size_t MAG_BUFFER_SIZE = 64;
 
 /**
- * 100Hz tracking engine. Deterministic, no dynamic alloc, non-blocking.
- * Platform layer must call tick() at 100Hz (every 10ms).
+ * Tracking engine: IMU + GPS + mag fusion via EKF. Deterministic, no dynamic alloc, non-blocking.
+ * Phase 1: caller runs at 20Hz; EKF holds track on GPS loss (predict-only). Refinement to 100Hz later.
  */
 class TrackingEngine {
 public:

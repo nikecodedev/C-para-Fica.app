@@ -21,11 +21,22 @@ class EngineBridge {
         nativeSetSubscriptionActive(handle, active)
     }
 
+    /** Chave com Validade: enable full fusion for client tests (call after validating key). */
+    fun setLicenseKeyActive(active: Boolean) {
+        nativeSetLicenseKeyActive(handle, active)
+    }
+
     fun tick(timestamp: Double): FloatArray {
         val out = FloatArray(10)
         nativeTick(handle, timestamp, out)
         return out
     }
+
+    /** Display speed (km/h or mph). */
+    fun getSpeedDisplay(): Double = nativeGetSpeedDisplay(handle)
+
+    /** Display distance (km or miles). */
+    fun getDistanceDisplay(): Double = nativeGetDistanceDisplay(handle)
 
     fun dispose() {
         if (handle != 0L) {
@@ -39,7 +50,10 @@ class EngineBridge {
     private external fun nativeGetSensorSinkPtr(ptr: Long): Long
     private external fun nativeSetOrigin(ptr: Long, lat: Double, lon: Double, alt: Double)
     private external fun nativeSetSubscriptionActive(ptr: Long, active: Boolean)
+    private external fun nativeSetLicenseKeyActive(ptr: Long, active: Boolean)
     private external fun nativeTick(ptr: Long, timestamp: Double, out: FloatArray)
+    private external fun nativeGetSpeedDisplay(ptr: Long): Double
+    private external fun nativeGetDistanceDisplay(ptr: Long): Double
 
     companion object {
         init { System.loadLibrary("fica_native") }

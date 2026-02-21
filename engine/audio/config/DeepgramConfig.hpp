@@ -45,9 +45,9 @@ struct DeepgramConfig {
         }
     }
 
-    /** Real-time: interim_results=true, utterance_end_ms=1000. Production: interim_results=false, utterance_end_ms=2000. */
+    /** Real-time: interim_results=true, utterance_end_ms=800 (min latency). Production: 2000. */
     bool useInterimResults() const { return mode == DeepgramMode::RealTime; }
-    int utteranceEndMs() const { return mode == DeepgramMode::RealTime ? 1000 : 2000; }
+    int utteranceEndMs() const { return mode == DeepgramMode::RealTime ? 800 : 2000; }
 };
 
 }  // namespace audio

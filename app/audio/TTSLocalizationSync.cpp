@@ -25,8 +25,9 @@ const char* TTSLocalizationSync::voiceForLocale(const std::string& locale) {
     if (locale.size() >= 2) {
         char a = static_cast<char>(std::tolower(static_cast<unsigned char>(locale[0])));
         char b = static_cast<char>(std::tolower(static_cast<unsigned char>(locale[1])));
-        if (a == 'p' && b == 't')
-            return engine::audio::Voice::LUNA_PT;
+        if (a == 'p' && b == 't') return engine::audio::Voice::LUNA_PT;
+        if (a == 'e' && b == 's') return engine::audio::Voice::NESTOR_ES;
+        if (a == 'd' && b == 'e') return engine::audio::Voice::VIKTORIA_DE;
     }
     return engine::audio::Voice::ASTERIA_EN;
 }
@@ -35,8 +36,9 @@ const char* TTSLocalizationSync::languageForLocale(const std::string& locale) {
     if (locale.size() >= 2) {
         char a = static_cast<char>(std::tolower(static_cast<unsigned char>(locale[0])));
         char b = static_cast<char>(std::tolower(static_cast<unsigned char>(locale[1])));
-        if (a == 'p' && b == 't')
-            return engine::audio::Lang::PT;
+        if (a == 'p' && b == 't') return engine::audio::Lang::PT;
+        if (a == 'e' && b == 's') return engine::audio::Lang::ES;
+        if (a == 'd' && b == 'e') return engine::audio::Lang::DE;
     }
     return engine::audio::Lang::EN;
 }

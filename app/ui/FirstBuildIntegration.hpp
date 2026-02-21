@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../engine/core/EngineAccessManager.hpp"
+#include "../../engine/core/TrackingEngine.hpp"
 #include "../../engine/config/UnitConverter.hpp"
 #include "../../engine/logging/TrackingLogger.hpp"
 #include "audio/AudioTrackingIntegration.hpp"
@@ -33,8 +34,11 @@ public:
         audioIntegration_ = integration;
     }
 
-    /** Set subscription (true = 100Hz fusion). */
+    /** Set subscription (true = full fusion). */
     void setSubscriptionActive(bool active) { engine_.setSubscriptionActive(active); }
+
+    /** Chave com Validade: enable full fusion for client tests (platform sets after validating key). */
+    void setLicenseKeyActive(bool active) { engine_.setLicenseKeyActive(active); }
 
     /** For display: speed in display units (km/h or mph). */
     double getSpeedDisplay() const { return speedDisplay_; }
@@ -44,6 +48,9 @@ public:
 
     /** For display: trajectory points (px, py) in ENU meters. */
     const std::vector<std::pair<double, double>>& getTrajectory() const { return trajectory_; }
+
+    /** Last fused state from most recent tick (for JNI out array). */
+    const engine::core::TrackingState& getLastState() const { return lastState_; }
 
     /** Unit labels. */
     const char* getSpeedUnit() const { return unitConv_.speedUnitLabel(); }
@@ -65,6 +72,7 @@ private:
 
     double speedDisplay_{0};
     double distanceDisplay_{0};
+    engine::core::TrackingState lastState_{};
     double lastPx_{0}, lastPy_{0}, lastPz_{0};
     bool hasLastPos_{false};
 

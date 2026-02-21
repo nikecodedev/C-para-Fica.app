@@ -4,9 +4,16 @@ import android.app.Activity
 import android.content.Context
 import com.android.billingclient.api.*
 
+/** Product ID: must match Google Play Console. */
+private const val PRODUCT_ID = "tracking_premium"
+
+/** Preferred trial periods (ISO 8601): P1W = 7 days, P7D = 7 days. Main marketing hook. */
+private val TRIAL_PERIOD_7_DAYS = setOf("P1W", "P7D")
+
 /**
  * Google Play Billing subscription manager.
- * Product: auto-renewable, 7-day trial, $4.99 / R$ 29.90.
+ * Product: tracking_premium — auto-renewable, 7-day free trial, $4.99 / R$ 29.90.
+ * Explicitly selects the 7-day trial offer (offerToken) for marketing parity with iOS.
  * Receipt validation: use Purchase.getOriginalJson() + server-side validation.
  */
 class PlayBillingSubscriptionManager(
@@ -44,7 +51,7 @@ class PlayBillingSubscriptionManager(
             override fun onBillingSetupFinished(result: BillingResult) {
                 if (result.responseCode == BillingClient.BillingResponseCode.OK) {
                     billingClient.queryPurchasesAsync(BillingClient.ProductType.SUBS) { _, purchases ->
-                        subscriptionActive = purchases.any { it.products.contains("tracking_premium") }
+                        subscriptionActive = purchases.any { it.products.contains(PRODUCT_ID) }
                         onStatusChanged?.invoke(subscriptionActive)
                     }
                 }
@@ -69,19 +76,22 @@ class PlayBillingSubscriptionManager(
             .setProductList(
                 listOf(
                     QueryProductDetailsParams.Product.newBuilder()
-                        .setProductId("tracking_premium")
+                        .setProductId(PRODUCT_ID)
                         .setProductType(BillingClient.ProductType.SUBS)
                         .build()
                 )
             )
             .build()
         billingClient.queryProductDetailsAsync(params) { result, productDetailsList ->
-            productDetailsList.firstOrNull()?.subscriptionOfferDetails?.firstOrNull()?.let { offer ->
+            val product = productDetailsList?.firstOrNull() ?: return@queryProductDetailsAsync
+            val offers = product.subscriptionOfferDetails ?: return@queryProductDetailsAsync
+            val trialOffer = selectTrialOffer(offers) ?: offers.firstOrNull()
+            trialOffer?.let { offer ->
                 val flowParams = BillingFlowParams.newBuilder()
                     .setProductDetailsParamsList(
                         listOf(
                             BillingFlowParams.ProductDetailsParams.newBuilder()
-                                .setProductDetails(productDetailsList.first())
+                                .setProductDetails(product)
                                 .setOfferToken(offer.offerToken)
                                 .build()
                         )
@@ -89,6 +99,28 @@ class PlayBillingSubscriptionManager(
                     .build()
                 billingClient.launchBillingFlow(activity, flowParams)
             }
+        }
+    }
+
+    /**
+     * Select the 7-day trial offer. Marketing parity with iOS.
+     * Prefer offer with free trial phase and P1W/P7D (7 days).
+     * Fallback: any offer with a free phase.
+     */
+    private fun selectTrialOffer(offers: List<ProductDetails.SubscriptionOfferDetails>): ProductDetails.SubscriptionOfferDetails? {
+        // Prefer 7-day trial (P1W or P7D)
+        offers.firstOrNull { hasFreeTrialWith7DayPeriod(it) }?.let { return it }
+        // Fallback: any offer with free trial phase
+        return offers.firstOrNull { hasFreeTrial(it) }
+    }
+
+    private fun hasFreeTrial(offer: ProductDetails.SubscriptionOfferDetails): Boolean {
+        return offer.pricingPhases.pricingPhaseList.any { it.priceAmountMicros == 0L }
+    }
+
+    private fun hasFreeTrialWith7DayPeriod(offer: ProductDetails.SubscriptionOfferDetails): Boolean {
+        return offer.pricingPhases.pricingPhaseList.any { phase ->
+            phase.priceAmountMicros == 0L && phase.billingPeriod in TRIAL_PERIOD_7_DAYS
         }
     }
 }

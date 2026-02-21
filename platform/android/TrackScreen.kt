@@ -3,16 +3,17 @@ package com.ficamotor
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.View
+import android.os.SystemClock
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.ficamotor.platform.EngineBridge
+import com.ficamotor.platform.PlayBillingSubscriptionManager
+import com.ficamotor.platform.SensorBridge
 
 /**
- * Basic track screen — first build.
- * Displays: speed, distance, trajectory line.
- * Wires 100Hz tick to integration. No tuning.
- *
- * Requires: integration set from native, or create in Activity.
+ * Track screen — first build. Displays speed, distance.
+ * 100Hz UI loop; native FirstBuildIntegration at 20Hz fusion (EKF).
+ * Wires EngineBridge + SensorBridge + PlayBilling. Subscription enables full fusion (20Hz EKF).
  */
 class TrackScreen : AppCompatActivity() {
 
@@ -21,7 +22,9 @@ class TrackScreen : AppCompatActivity() {
     private var tickHandler: Handler? = null
     private var tickRunnable: Runnable? = null
 
-    var integrationPtr: Long = 0
+    private var engineBridge: EngineBridge? = null
+    private var sensorBridge: SensorBridge? = null
+    private var billingManager: PlayBillingSubscriptionManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +32,24 @@ class TrackScreen : AppCompatActivity() {
 
         speedLabel = findViewById(R.id.speed_value)
         distanceLabel = findViewById(R.id.distance_value)
+
+        engineBridge = EngineBridge()
+        sensorBridge = SensorBridge(this)
+        sensorBridge?.setSink(engineBridge!!.getSensorSinkPtr())
+
+        engineBridge?.setOrigin(-23.20, -47.14, 580.0)
+
+        billingManager = PlayBillingSubscriptionManager(this, this)
+        billingManager?.setOnStatusChanged { active ->
+            engineBridge?.setSubscriptionActive(active)
+        }
+        engineBridge?.setLicenseKeyActive(true)
     }
 
     override fun onResume() {
         super.onResume()
+        billingManager?.restore()
+        sensorBridge?.start()
         tickHandler = Handler(Looper.getMainLooper())
         tickRunnable = object : Runnable {
             override fun run() {
@@ -46,12 +63,24 @@ class TrackScreen : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         tickRunnable?.let { tickHandler?.removeCallbacks(it) }
+        sensorBridge?.stop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        engineBridge?.dispose()
+        engineBridge = null
+        sensorBridge = null
+        billingManager = null
     }
 
     private fun tick() {
-        if (integrationPtr == 0L) return
-        // Call native tick; update labels from native getters
-        speedLabel?.text = "—"
-        distanceLabel?.text = "—"
+        val bridge = engineBridge ?: return
+        val ts = SystemClock.elapsedRealtimeNanos() / 1e9
+        bridge.tick(ts)
+        val speed = bridge.getSpeedDisplay()
+        val distance = bridge.getDistanceDisplay()
+        speedLabel?.text = String.format("%.1f km/h", speed)
+        distanceLabel?.text = String.format("%.2f km", distance)
     }
 }

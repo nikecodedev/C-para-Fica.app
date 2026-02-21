@@ -7,7 +7,8 @@ namespace engine {
 namespace core {
 
 namespace {
-    constexpr double TICK_PERIOD = 0.01;  // 100 Hz
+    constexpr double TICK_PERIOD = 0.01;   // nominal 100 Hz; phase 1 uses 20 Hz caller
+    constexpr double MAX_DT = 0.2;         // cap for stability (avoid huge predict on jitter)
 }
 
 TrackingEngine::TrackingEngine() {
@@ -108,7 +109,7 @@ TrackingState TrackingEngine::tick(double timestamp) {
     double dt = TICK_PERIOD;
     if (lastTickTimeValid_) {
         dt = timestamp - lastTickTime_;
-        if (dt <= 0.0 || dt > 0.5) dt = TICK_PERIOD;
+        if (dt <= 0.0 || dt > MAX_DT) dt = TICK_PERIOD;
     }
     lastTickTime_ = timestamp;
     lastTickTimeValid_ = true;
