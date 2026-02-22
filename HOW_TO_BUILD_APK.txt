@@ -1,0 +1,16 @@
+HOW TO BUILD THE APK
+===================
+
+1. Open Android Studio
+2. File -> Open -> select the fica-motor folder (the one containing build.gradle.kts)
+3. Wait for Gradle sync (first time may take a few minutes)
+4. Build -> Build Bundle(s) / APK(s) -> Build APK(s)
+5. APK will be at: app/build/outputs/apk/debug/app-debug.apk
+
+Or from terminal (if Gradle wrapper is set up):
+   .\gradlew assembleDebug
+
+REQUIREMENTS:
+- Android Studio with SDK, NDK, and CMake installed
+- NDK: SDK Manager -> SDK Tools -> NDK
+- Accept licenses if prompted

@@ -1,0 +1,208 @@
+{
+  "buildFiles": [
+    "E:\\fica-motor\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "access_manager_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "access_manager_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\access_manager_test",
+      "runtimeFiles": []
+    },
+    "app_audio::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "app_audio",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libapp_audio.a"
+    },
+    "app_license::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "app_license",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libapp_license.a"
+    },
+    "app_localization::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "app_localization",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libapp_localization.a"
+    },
+    "app_ui::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "app_ui",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libapp_ui.a"
+    },
+    "audio_interface_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "audio_interface_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\audio_interface_test",
+      "runtimeFiles": []
+    },
+    "audio_tracking_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "audio_tracking_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\audio_tracking_test",
+      "runtimeFiles": []
+    },
+    "deepgram_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "deepgram_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\deepgram_test",
+      "runtimeFiles": []
+    },
+    "ekf_math_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "ekf_math_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\ekf_math_test",
+      "runtimeFiles": []
+    },
+    "engine_audio::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_audio",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_audio.a"
+    },
+    "engine_audio_tests::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_audio_tests",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_audio_tests.a"
+    },
+    "engine_config::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_config",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_config.a"
+    },
+    "engine_core::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_core",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_core.a"
+    },
+    "engine_fusion::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_fusion",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_fusion.a"
+    },
+    "engine_logging::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_logging",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_logging.a"
+    },
+    "engine_math::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_math",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_math.a"
+    },
+    "engine_sensors::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_sensors",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\armeabi-v7a\\libengine_sensors.a"
+    },
+    "engine_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "engine_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\engine_test",
+      "runtimeFiles": []
+    },
+    "fica_native::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "fica_native",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\libfica_native.so",
+      "runtimeFiles": []
+    },
+    "first_build_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "first_build_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\first_build_test",
+      "runtimeFiles": []
+    },
+    "license_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "license_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\license_test",
+      "runtimeFiles": []
+    },
+    "localization_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "localization_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\localization_test",
+      "runtimeFiles": []
+    },
+    "logging_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "logging_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\logging_test",
+      "runtimeFiles": []
+    },
+    "replay_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "replay_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\replay_test",
+      "runtimeFiles": []
+    },
+    "simulator_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "simulator_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\simulator_test",
+      "runtimeFiles": []
+    },
+    "tracking_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "tracking_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\tracking_test",
+      "runtimeFiles": []
+    },
+    "unit_converter_test::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "armeabi-v7a",
+      "artifactName": "unit_converter_test",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\armeabi-v7a\\unit_converter_test",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang.exe",
+      "cppCompilerExecutable": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

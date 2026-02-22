@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\layout_track_screen.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-android-27:\\layout\\track_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-main-26:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "com.ficamotor.app-merged_res-24:/layout_track_screen.xml.flat",
+        "source": "com.ficamotor.app-android-27:/layout/track_screen.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\drawable_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-main-26:\\drawable\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-main-26:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-main-26:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-main-26:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-merged_res-24:\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\daemon\\8.2\\com.ficamotor.app-android-27:\\layout\\activity_splash.xml"
+    }
+]

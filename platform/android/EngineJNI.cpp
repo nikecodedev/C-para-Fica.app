@@ -73,3 +73,10 @@ JNIEXPORT jdouble JNICALL
 Java_com_ficamotor_platform_EngineBridge_nativeGetDistanceDisplay(JNIEnv*, jclass, jlong ptr) {
     return static_cast<jdouble>(getHandle(ptr)->integration.getDistanceDisplay());
 }
+
+JNIEXPORT void JNICALL
+Java_com_ficamotor_platform_EngineBridge_nativeResetSession(JNIEnv*, jclass, jlong ptr) {
+    getHandle(ptr)->integration.resetSession();
+}
+
+}  // extern "C"

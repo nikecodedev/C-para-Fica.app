@@ -38,6 +38,9 @@ class EngineBridge {
     /** Display distance (km or miles). */
     fun getDistanceDisplay(): Double = nativeGetDistanceDisplay(handle)
 
+    /** Reset trajectory and accumulated distance (new ride). */
+    fun resetSession() = nativeResetSession(handle)
+
     fun dispose() {
         if (handle != 0L) {
             nativeDestroy(handle)
@@ -54,6 +57,7 @@ class EngineBridge {
     private external fun nativeTick(ptr: Long, timestamp: Double, out: FloatArray)
     private external fun nativeGetSpeedDisplay(ptr: Long): Double
     private external fun nativeGetDistanceDisplay(ptr: Long): Double
+    private external fun nativeResetSession(ptr: Long)
 
     companion object {
         init { System.loadLibrary("fica_native") }

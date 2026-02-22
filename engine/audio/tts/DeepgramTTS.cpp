@@ -41,6 +41,7 @@ DeepgramTTS::DeepgramTTS(std::shared_ptr<IHttpTransport> http,
     : http_(std::move(http))
     , audioSink_(std::move(audioSink))
     , config_(config)
+    , log_(nullptr)
 {
     assert(http_ && audioSink_);
 }

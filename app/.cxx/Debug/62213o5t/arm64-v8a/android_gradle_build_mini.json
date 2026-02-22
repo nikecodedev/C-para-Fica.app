@@ -1,0 +1,183 @@
+{
+  "buildFiles": [
+    "E:\\fica-motor\\CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "D:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+      "-C",
+      "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "D:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe",
+    "-C",
+    "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "tracking_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "tracking_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\tracking_test",
+      "runtimeFiles": []
+    },
+    "unit_converter_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "unit_converter_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\unit_converter_test",
+      "runtimeFiles": []
+    },
+    "app_audio::@6890427a1f51a3e7e1df": {
+      "artifactName": "app_audio",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libapp_audio.a",
+      "runtimeFiles": []
+    },
+    "engine_audio::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_audio",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_audio.a",
+      "runtimeFiles": []
+    },
+    "audio_interface_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "audio_interface_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\audio_interface_test",
+      "runtimeFiles": []
+    },
+    "first_build_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "first_build_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\first_build_test",
+      "runtimeFiles": []
+    },
+    "localization_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "localization_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\localization_test",
+      "runtimeFiles": []
+    },
+    "simulator_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "simulator_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\simulator_test",
+      "runtimeFiles": []
+    },
+    "engine_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\engine_test",
+      "runtimeFiles": []
+    },
+    "audio_tracking_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "audio_tracking_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\audio_tracking_test",
+      "runtimeFiles": []
+    },
+    "replay_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "replay_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\replay_test",
+      "runtimeFiles": []
+    },
+    "deepgram_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "deepgram_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\deepgram_test",
+      "runtimeFiles": []
+    },
+    "logging_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "logging_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\logging_test",
+      "runtimeFiles": []
+    },
+    "fica_native::@6890427a1f51a3e7e1df": {
+      "artifactName": "fica_native",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\libfica_native.so",
+      "runtimeFiles": []
+    },
+    "engine_fusion::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_fusion",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_fusion.a",
+      "runtimeFiles": []
+    },
+    "engine_math::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_math",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_math.a",
+      "runtimeFiles": []
+    },
+    "engine_sensors::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_sensors",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_sensors.a",
+      "runtimeFiles": []
+    },
+    "app_localization::@6890427a1f51a3e7e1df": {
+      "artifactName": "app_localization",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libapp_localization.a",
+      "runtimeFiles": []
+    },
+    "license_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "license_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\license_test",
+      "runtimeFiles": []
+    },
+    "app_license::@6890427a1f51a3e7e1df": {
+      "artifactName": "app_license",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libapp_license.a",
+      "runtimeFiles": []
+    },
+    "engine_audio_tests::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_audio_tests",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_audio_tests.a",
+      "runtimeFiles": []
+    },
+    "ekf_math_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "ekf_math_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\ekf_math_test",
+      "runtimeFiles": []
+    },
+    "engine_logging::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_logging",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_logging.a",
+      "runtimeFiles": []
+    },
+    "access_manager_test::@6890427a1f51a3e7e1df": {
+      "artifactName": "access_manager_test",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\build\\intermediates\\cxx\\Debug\\62213o5t\\obj\\arm64-v8a\\access_manager_test",
+      "runtimeFiles": []
+    },
+    "app_ui::@6890427a1f51a3e7e1df": {
+      "artifactName": "app_ui",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libapp_ui.a",
+      "runtimeFiles": []
+    },
+    "engine_core::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_core",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_core.a",
+      "runtimeFiles": []
+    },
+    "engine_config::@6890427a1f51a3e7e1df": {
+      "artifactName": "engine_config",
+      "abi": "arm64-v8a",
+      "output": "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a\\libengine_config.a",
+      "runtimeFiles": []
+    }
+  }
+}

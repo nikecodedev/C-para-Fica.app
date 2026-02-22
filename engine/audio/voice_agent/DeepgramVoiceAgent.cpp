@@ -22,6 +22,7 @@ DeepgramVoiceAgent::DeepgramVoiceAgent(std::shared_ptr<IWebSocketTransport> ws,
     , audioSource_(std::move(audioSource))
     , timer_(std::move(timer))
     , config_(config)
+    , log_(nullptr)
 {
     assert(ws_ && audioSource_ && timer_);
 }
@@ -95,7 +96,7 @@ void DeepgramVoiceAgent::connectWebSocket() {
     oss << DEEPGRAM_WS_BASE
         << "?encoding=linear16"
         << "&sample_rate=" << sr
-        << "&language=" << config_.deepgram.language.empty() ? config_.language : config_.deepgram.language
+        << "&language=" << (config_.deepgram.language.empty() ? config_.language : config_.deepgram.language)
         << "&interim_results=" << (interim ? "true" : "false")
         << "&punctuate=true"
         << "&smart_format=true"

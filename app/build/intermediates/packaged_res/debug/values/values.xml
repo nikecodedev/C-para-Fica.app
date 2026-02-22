@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="splash_background">#0A0A0F</color>
+    <color name="splash_copyright">#6B6B7B</color>
+    <color name="splash_logo">#FFFFFF</color>
+    <string name="app_name">FICA Motor</string>
+</resources>

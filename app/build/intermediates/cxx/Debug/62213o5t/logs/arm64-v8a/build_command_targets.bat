@@ -1,0 +1,19 @@
+@echo off
+"D:\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+  -C ^
+  "E:\\fica-motor\\app\\.cxx\\Debug\\62213o5t\\arm64-v8a" ^
+  access_manager_test ^
+  audio_interface_test ^
+  audio_tracking_test ^
+  deepgram_test ^
+  ekf_math_test ^
+  engine_test ^
+  fica_native ^
+  first_build_test ^
+  license_test ^
+  localization_test ^
+  logging_test ^
+  replay_test ^
+  simulator_test ^
+  tracking_test ^
+  unit_converter_test

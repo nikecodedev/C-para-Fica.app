@@ -25,6 +25,15 @@ public:
         assert(i >= 0 && i < Rows && j >= 0 && j < Cols);
         return data[i * Cols + j];
     }
+    /** Single-index access for column vectors (Cols==1) */
+    double& operator()(int i) {
+        static_assert(Cols == 1, "single-index only for column vectors");
+        return (*this)(i, 0);
+    }
+    double operator()(int i) const {
+        static_assert(Cols == 1, "single-index only for column vectors");
+        return (*this)(i, 0);
+    }
 
     void setZero() { data.fill(0); }
     void setIdentity() {

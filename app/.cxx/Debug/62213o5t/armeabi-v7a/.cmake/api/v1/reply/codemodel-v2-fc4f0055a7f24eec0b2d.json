@@ -1,0 +1,294 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.6.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "fica-motor",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "access_manager_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-access_manager_test-Debug-0d894d03af8b1230b082.json",
+					"name" : "access_manager_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "app_audio::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app_audio-Debug-468b2bdfaa22a11f7aef.json",
+					"name" : "app_audio",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "app_license::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app_license-Debug-a7c5d054ac2e220c2e6c.json",
+					"name" : "app_license",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "app_localization::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app_localization-Debug-a212ecd97b4150c69aff.json",
+					"name" : "app_localization",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "app_ui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-app_ui-Debug-6a89736bd8fdae6f11f1.json",
+					"name" : "app_ui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "audio_interface_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-audio_interface_test-Debug-382515feb563cb5bf772.json",
+					"name" : "audio_interface_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "audio_tracking_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-audio_tracking_test-Debug-786d561a9d52bfb192eb.json",
+					"name" : "audio_tracking_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "deepgram_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-deepgram_test-Debug-b17138ced21b1c73c0b0.json",
+					"name" : "deepgram_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ekf_math_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ekf_math_test-Debug-04850e67d4937eee8d64.json",
+					"name" : "ekf_math_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_audio::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_audio-Debug-8726a3efc2211d2a44df.json",
+					"name" : "engine_audio",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_audio_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_audio_tests-Debug-d0593209fd34b265bdd1.json",
+					"name" : "engine_audio_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_config::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_config-Debug-285bf805bff86504271a.json",
+					"name" : "engine_config",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_core-Debug-71e35ebfcdba0e524aab.json",
+					"name" : "engine_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_fusion::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_fusion-Debug-a31bfd099dea32b7e42b.json",
+					"name" : "engine_fusion",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_logging::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_logging-Debug-5dc8f4cf7814f348a242.json",
+					"name" : "engine_logging",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_math::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_math-Debug-14d64f5a3eab16009d1d.json",
+					"name" : "engine_math",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_sensors::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_sensors-Debug-7b203acbf8cdc8175db0.json",
+					"name" : "engine_sensors",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine_test-Debug-2b2409f6ee1a9ff83d0f.json",
+					"name" : "engine_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fica_native::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fica_native-Debug-19c67598fa4f377ddd20.json",
+					"name" : "fica_native",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "first_build_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-first_build_test-Debug-69c64da7cfc734d4187f.json",
+					"name" : "first_build_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "license_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-license_test-Debug-4df7aad174f636f9aa52.json",
+					"name" : "license_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "localization_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-localization_test-Debug-6e044ecd4dcd11fc460a.json",
+					"name" : "localization_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "logging_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-logging_test-Debug-07e79b5366e337f05682.json",
+					"name" : "logging_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "replay_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-replay_test-Debug-9b08cd3bc7fc47e24a94.json",
+					"name" : "replay_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "simulator_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-simulator_test-Debug-bf9e1363b9844b68eed0.json",
+					"name" : "simulator_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tracking_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tracking_test-Debug-ec69fd2b0164cea4e020.json",
+					"name" : "tracking_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "unit_converter_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-unit_converter_test-Debug-f85e4d3b18dbe5f81bd8.json",
+					"name" : "unit_converter_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/fica-motor/app/.cxx/Debug/62213o5t/armeabi-v7a",
+		"source" : "E:/fica-motor"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

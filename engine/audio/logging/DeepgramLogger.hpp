@@ -13,6 +13,7 @@ namespace audio {
  */
 class DeepgramLogger {
 public:
+    DeepgramLogger() : delegate_(nullptr) {}
     explicit DeepgramLogger(IAudioLogger* delegate) : delegate_(delegate) {}
 
     void setDelegate(IAudioLogger* d) { delegate_ = d; }

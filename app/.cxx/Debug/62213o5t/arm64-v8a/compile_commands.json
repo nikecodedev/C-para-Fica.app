@@ -1,0 +1,217 @@
+[
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_config.dir\\engine\\config\\UnitConverter.cpp.o -c E:\\fica-motor\\engine\\config\\UnitConverter.cpp",
+  "file": "E:\\fica-motor\\engine\\config\\UnitConverter.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_math.dir\\engine\\math\\CoordinateConverter.cpp.o -c E:\\fica-motor\\engine\\math\\CoordinateConverter.cpp",
+  "file": "E:\\fica-motor\\engine\\math\\CoordinateConverter.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_math.dir\\engine\\math\\Quaternion.cpp.o -c E:\\fica-motor\\engine\\math\\Quaternion.cpp",
+  "file": "E:\\fica-motor\\engine\\math\\Quaternion.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_sensors.dir\\engine\\sensors\\GPSSensor.cpp.o -c E:\\fica-motor\\engine\\sensors\\GPSSensor.cpp",
+  "file": "E:\\fica-motor\\engine\\sensors\\GPSSensor.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_sensors.dir\\engine\\sensors\\IMUSensor.cpp.o -c E:\\fica-motor\\engine\\sensors\\IMUSensor.cpp",
+  "file": "E:\\fica-motor\\engine\\sensors\\IMUSensor.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_sensors.dir\\engine\\sensors\\MagnetometerSensor.cpp.o -c E:\\fica-motor\\engine\\sensors\\MagnetometerSensor.cpp",
+  "file": "E:\\fica-motor\\engine\\sensors\\MagnetometerSensor.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_fusion.dir\\engine\\fusion\\EKFConfig.cpp.o -c E:\\fica-motor\\engine\\fusion\\EKFConfig.cpp",
+  "file": "E:\\fica-motor\\engine\\fusion\\EKFConfig.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_fusion.dir\\engine\\fusion\\EKFProcess.cpp.o -c E:\\fica-motor\\engine\\fusion\\EKFProcess.cpp",
+  "file": "E:\\fica-motor\\engine\\fusion\\EKFProcess.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_fusion.dir\\engine\\fusion\\EKFMeasurement.cpp.o -c E:\\fica-motor\\engine\\fusion\\EKFMeasurement.cpp",
+  "file": "E:\\fica-motor\\engine\\fusion\\EKFMeasurement.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_fusion.dir\\engine\\fusion\\ExtendedKalmanFilter.cpp.o -c E:\\fica-motor\\engine\\fusion\\ExtendedKalmanFilter.cpp",
+  "file": "E:\\fica-motor\\engine\\fusion\\ExtendedKalmanFilter.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_logging.dir\\engine\\logging\\TrackingLogger.cpp.o -c E:\\fica-motor\\engine\\logging\\TrackingLogger.cpp",
+  "file": "E:\\fica-motor\\engine\\logging\\TrackingLogger.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_core.dir\\engine\\core\\TrackingEngine.cpp.o -c E:\\fica-motor\\engine\\core\\TrackingEngine.cpp",
+  "file": "E:\\fica-motor\\engine\\core\\TrackingEngine.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_core.dir\\engine\\core\\EngineAccessManager.cpp.o -c E:\\fica-motor\\engine\\core\\EngineAccessManager.cpp",
+  "file": "E:\\fica-motor\\engine\\core\\EngineAccessManager.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\engine_test.dir\\engine\\tests\\test_ekf.cpp.o -c E:\\fica-motor\\engine\\tests\\test_ekf.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_ekf.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\tracking_test.dir\\engine\\tests\\test_tracking_engine.cpp.o -c E:\\fica-motor\\engine\\tests\\test_tracking_engine.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_tracking_engine.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\logging_test.dir\\engine\\tests\\test_logging.cpp.o -c E:\\fica-motor\\engine\\tests\\test_logging.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_logging.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\access_manager_test.dir\\engine\\tests\\test_access_manager.cpp.o -c E:\\fica-motor\\engine\\tests\\test_access_manager.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_access_manager.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_localization.dir\\app\\localization\\Translations.cpp.o -c E:\\fica-motor\\app\\localization\\Translations.cpp",
+  "file": "E:\\fica-motor\\app\\localization\\Translations.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_localization.dir\\app\\localization\\Localizer.cpp.o -c E:\\fica-motor\\app\\localization\\Localizer.cpp",
+  "file": "E:\\fica-motor\\app\\localization\\Localizer.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_localization.dir\\app\\localization\\LocaleDetector.cpp.o -c E:\\fica-motor\\app\\localization\\LocaleDetector.cpp",
+  "file": "E:\\fica-motor\\app\\localization\\LocaleDetector.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\localization_test.dir\\app\\tests\\test_localization.cpp.o -c E:\\fica-motor\\app\\tests\\test_localization.cpp",
+  "file": "E:\\fica-motor\\app\\tests\\test_localization.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_license.dir\\app\\license\\LicenseKeyWithValidity.cpp.o -c E:\\fica-motor\\app\\license\\LicenseKeyWithValidity.cpp",
+  "file": "E:\\fica-motor\\app\\license\\LicenseKeyWithValidity.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\license_test.dir\\app\\tests\\test_license_key.cpp.o -c E:\\fica-motor\\app\\tests\\test_license_key.cpp",
+  "file": "E:\\fica-motor\\app\\tests\\test_license_key.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_ui.dir\\app\\ui\\FirstBuildIntegration.cpp.o -c E:\\fica-motor\\app\\ui\\FirstBuildIntegration.cpp",
+  "file": "E:\\fica-motor\\app\\ui\\FirstBuildIntegration.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_audio.dir\\app\\audio\\AudioTrackingIntegration.cpp.o -c E:\\fica-motor\\app\\audio\\AudioTrackingIntegration.cpp",
+  "file": "E:\\fica-motor\\app\\audio\\AudioTrackingIntegration.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_audio.dir\\app\\audio\\TTSLocalizationSync.cpp.o -c E:\\fica-motor\\app\\audio\\TTSLocalizationSync.cpp",
+  "file": "E:\\fica-motor\\app\\audio\\TTSLocalizationSync.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\app_audio.dir\\app\\audio\\VoiceCommandQueue.cpp.o -c E:\\fica-motor\\app\\audio\\VoiceCommandQueue.cpp",
+  "file": "E:\\fica-motor\\app\\audio\\VoiceCommandQueue.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\audio_tracking_test.dir\\app\\tests\\test_audio_tracking.cpp.o -c E:\\fica-motor\\app\\tests\\test_audio_tracking.cpp",
+  "file": "E:\\fica-motor\\app\\tests\\test_audio_tracking.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\first_build_test.dir\\app\\tests\\test_first_build.cpp.o -c E:\\fica-motor\\app\\tests\\test_first_build.cpp",
+  "file": "E:\\fica-motor\\app\\tests\\test_first_build.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\unit_converter_test.dir\\engine\\tests\\test_unit_converter.cpp.o -c E:\\fica-motor\\engine\\tests\\test_unit_converter.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_unit_converter.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\ekf_math_test.dir\\engine\\tests\\test_ekf_math.cpp.o -c E:\\fica-motor\\engine\\tests\\test_ekf_math.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_ekf_math.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\replay_test.dir\\engine\\tests\\test_replay.cpp.o -c E:\\fica-motor\\engine\\tests\\test_replay.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_replay.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\replay_test.dir\\engine\\tests\\SensorReplay.cpp.o -c E:\\fica-motor\\engine\\tests\\SensorReplay.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\SensorReplay.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\simulator_test.dir\\engine\\tests\\test_simulator.cpp.o -c E:\\fica-motor\\engine\\tests\\test_simulator.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\test_simulator.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\simulator_test.dir\\engine\\tests\\Simulator.cpp.o -c E:\\fica-motor\\engine\\tests\\Simulator.cpp",
+  "file": "E:\\fica-motor\\engine\\tests\\Simulator.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_audio.dir\\engine\\audio\\AudioEngine.cpp.o -c E:\\fica-motor\\engine\\audio\\AudioEngine.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\AudioEngine.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_audio.dir\\engine\\audio\\tts\\DeepgramTTS.cpp.o -c E:\\fica-motor\\engine\\audio\\tts\\DeepgramTTS.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\tts\\DeepgramTTS.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_audio.dir\\engine\\audio\\voice_agent\\DeepgramVoiceAgent.cpp.o -c E:\\fica-motor\\engine\\audio\\voice_agent\\DeepgramVoiceAgent.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\voice_agent\\DeepgramVoiceAgent.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\audio_interface_test.dir\\engine\\audio\\tests\\test_audio_interfaces.cpp.o -c E:\\fica-motor\\engine\\audio\\tests\\test_audio_interfaces.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\tests\\test_audio_interfaces.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\engine_audio_tests.dir\\engine\\audio\\tests\\FileAudioSource.cpp.o -c E:\\fica-motor\\engine\\audio\\tests\\FileAudioSource.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\tests\\FileAudioSource.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -IE:/fica-motor -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIE -std=gnu++17 -o CMakeFiles\\deepgram_test.dir\\engine\\audio\\tests\\test_deepgram.cpp.o -c E:\\fica-motor\\engine\\audio\\tests\\test_deepgram.cpp",
+  "file": "E:\\fica-motor\\engine\\audio\\tests\\test_deepgram.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dfica_native_EXPORTS -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\fica_native.dir\\platform\\android\\EngineJNI.cpp.o -c E:\\fica-motor\\platform\\android\\EngineJNI.cpp",
+  "file": "E:\\fica-motor\\platform\\android\\EngineJNI.cpp"
+},
+{
+  "directory": "E:/fica-motor/app/.cxx/Debug/62213o5t/arm64-v8a",
+  "command": "D:\\Android\\Sdk\\ndk\\25.1.8937393\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\clang++.exe --target=aarch64-none-linux-android24 --sysroot=D:/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dfica_native_EXPORTS -IE:/fica-motor -IE:/fica-motor/app -IE:/fica-motor/engine/audio -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -fPIC -std=gnu++17 -o CMakeFiles\\fica_native.dir\\platform\\android\\SensorBridge.cpp.o -c E:\\fica-motor\\platform\\android\\SensorBridge.cpp",
+  "file": "E:\\fica-motor\\platform\\android\\SensorBridge.cpp"
+}
+]

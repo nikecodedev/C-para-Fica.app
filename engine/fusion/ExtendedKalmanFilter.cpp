@@ -109,7 +109,7 @@ void ExtendedKalmanFilter::updateGPS(double px, double py, double pz) {
     h_vec(1, 0) = h[1];
     h_vec(2, 0) = h[2];
 
-    Matrix<3, EKF_STATE_DIM> Ht = H.transposed();
+    Matrix<EKF_STATE_DIM, 3> Ht = H.transposed();
     Matrix<3, 3> S = H * P_ * Ht + R;
 
     Matrix<3, 3> S_inv;
@@ -152,7 +152,7 @@ void ExtendedKalmanFilter::updateIMU(double ax, double ay, double az, double gx,
     Matrix<6, 1> h_vec;
     for (int i = 0; i < 6; ++i) h_vec(i, 0) = h[i];
 
-    Matrix<6, EKF_STATE_DIM> Ht = H.transposed();
+    Matrix<EKF_STATE_DIM, 6> Ht = H.transposed();
     Matrix<6, 6> S = H * P_ * Ht + R;
 
     Matrix<6, 6> S_inv;
@@ -196,7 +196,7 @@ void ExtendedKalmanFilter::updateMagnetometer(double mx, double my, double mz) {
     h_vec(1, 0) = h[1];
     h_vec(2, 0) = h[2];
 
-    Matrix<3, EKF_STATE_DIM> Ht = H.transposed();
+    Matrix<EKF_STATE_DIM, 3> Ht = H.transposed();
     Matrix<3, 3> S = H * P_ * Ht + R;
 
     Matrix<3, 3> S_inv;
@@ -228,3 +228,6 @@ void ExtendedKalmanFilter::setEarthMagneticField(double mx, double my, double mz
     earthMag_[1] = my;
     earthMag_[2] = mz;
 }
+
+}  // namespace fusion
+}  // namespace engine
