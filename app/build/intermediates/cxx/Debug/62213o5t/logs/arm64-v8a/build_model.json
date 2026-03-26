@@ -25,7 +25,6 @@
     "variantName": "debug",
     "isDebuggableEnabled": true,
     "validAbiList": [
-      "armeabi-v7a",
       "arm64-v8a"
     ],
     "buildTargetSet": [],
@@ -139,6 +138,7 @@
         "rootBuildGradleFolder": "E:\\fica-motor",
         "sdkFolder": "D:\\Android\\Sdk",
         "isBuildOnlyTargetAbiEnabled": true,
+        "ideBuildTargetAbi": "x86_64,x86,arm64-v8a,armeabi-v7a,armeabi",
         "isCmakeBuildCohabitationEnabled": false,
         "isPrefabEnabled": false
       },

@@ -84,8 +84,9 @@ class SensorBridge(private val context: Context) {
     }
 
     fun start() {
-        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 100)
-            .setMinUpdateIntervalMillis(10)
+        // 20 Hz GPS input per Bíblia: 50 ms interval
+        val request = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 50)
+            .setMinUpdateIntervalMillis(50)
             .setMaxUpdates(Int.MAX_VALUE)
             .build()
         fusedClient.requestLocationUpdates(request, locationCallback, null)

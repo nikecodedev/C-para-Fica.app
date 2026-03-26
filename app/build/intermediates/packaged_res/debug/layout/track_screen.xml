@@ -47,13 +47,37 @@
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp">
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:text="Start"
+                android:backgroundTint="#00BFA5"
+                android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:text="Pause"
+                android:backgroundTint="#FF9800"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
         <Button
             android:id="@+id/btn_new_ride"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:text="New Ride"
-            android:backgroundTint="#00BFA5"
+            android:backgroundTint="#607D8B"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

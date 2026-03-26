@@ -21,7 +21,11 @@ void FirstBuildIntegration::tick(double timestamp) {
         double dy = state.py - lastPy_;
         double dz = state.pz - lastPz_;
         double step = std::sqrt(dx*dx + dy*dy + dz*dz);
-        distanceDisplay_ += unitConv_.distanceToDisplay(step);
+        // Only accumulate distance when moving; ignore GPS/IMU drift when stationary
+        constexpr double MIN_SPEED_MS = 0.15;  // ~0.5 km/h
+        if (v >= MIN_SPEED_MS) {
+            distanceDisplay_ += unitConv_.distanceToDisplay(step);
+        }
     }
     lastPx_ = state.px;
     lastPy_ = state.py;

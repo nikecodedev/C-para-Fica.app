@@ -71,3 +71,7 @@
 842	989	7934369542442925	../../../../build/intermediates/cxx/Debug/62213o5t/obj/arm64-v8a/libfica_native.so	cc6ff5d9c57c1531
 6	987	7934390993434826	CMakeFiles/fica_native.dir/platform/android/EngineJNI.cpp.o	39a188e420549818
 987	1155	7934390994957805	../../../../build/intermediates/cxx/Debug/62213o5t/obj/arm64-v8a/libfica_native.so	cc6ff5d9c57c1531
+4	1399	7934764233768467	CMakeFiles/app_ui.dir/app/ui/FirstBuildIntegration.cpp.o	740dea4ae84c9ef3
+1400	2516	7934764242110297	libapp_ui.a	5035c6a8b3a55da9
+2516	5896	7934764276849943	../../../../build/intermediates/cxx/Debug/62213o5t/obj/arm64-v8a/first_build_test	7a5d5968462ec6dc
+2523	5896	7934764276849943	../../../../build/intermediates/cxx/Debug/62213o5t/obj/arm64-v8a/libfica_native.so	cc6ff5d9c57c1531

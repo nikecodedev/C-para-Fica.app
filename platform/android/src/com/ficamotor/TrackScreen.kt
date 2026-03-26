@@ -46,6 +46,8 @@ class TrackScreen : AppCompatActivity() {
     private var sensorBridge: SensorBridge? = null
     private var billingManager: PlayBillingSubscriptionManager? = null
 
+    private var isRecording = false
+
     private val locationPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
@@ -62,6 +64,8 @@ class TrackScreen : AppCompatActivity() {
         paceLabel = findViewById(R.id.pace_value)
         distanceLabel = findViewById(R.id.distance_value)
         mapContainer = findViewById(R.id.map_container)
+        findViewById<android.widget.Button>(R.id.btn_start)?.setOnClickListener { onStartClick() }
+        findViewById<android.widget.Button>(R.id.btn_pause)?.setOnClickListener { onPauseClick() }
         findViewById<android.widget.Button>(R.id.btn_new_ride)?.setOnClickListener { onNewRide() }
 
         if (hasValidMapsKey()) {
@@ -117,13 +121,17 @@ class TrackScreen : AppCompatActivity() {
         if (!hasLocationPermission()) {
             locationPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION))
         }
+        updateRecordingUi()
     }
 
     private fun addMapPlaceholder(msg: String) {
         val tv = TextView(this)
         tv.text = msg
         tv.setPadding(32, 32, 32, 32)
-        mapContainer?.addView(tv)
+        mapContainer?.addView(tv, FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.MATCH_PARENT
+        ))
     }
 
     private fun hasValidMapsKey(): Boolean {
@@ -148,6 +156,40 @@ class TrackScreen : AppCompatActivity() {
             }
         }
         tickHandler?.post(tickRunnable!!)
+        isRecording = true
+        updateRecordingUi()
+    }
+
+    private fun stopSensorsAndTick() {
+        tickRunnable?.let { tickHandler?.removeCallbacks(it) }
+        tickRunnable = null
+        sensorBridge?.stop()
+        isRecording = false
+        updateRecordingUi()
+    }
+
+    /** Pause tracking when activity goes to background; preserves isRecording for onResume. */
+    private fun pauseForLifecycle() {
+        tickRunnable?.let { tickHandler?.removeCallbacks(it) }
+        tickRunnable = null
+        sensorBridge?.stop()
+    }
+
+    private fun onStartClick() {
+        if (!hasLocationPermission()) {
+            locationPermissionLauncher.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION))
+            return
+        }
+        startSensorsAndTick()
+    }
+
+    private fun onPauseClick() {
+        stopSensorsAndTick()
+    }
+
+    private fun updateRecordingUi() {
+        findViewById<android.widget.Button>(R.id.btn_start)?.isEnabled = !isRecording
+        findViewById<android.widget.Button>(R.id.btn_pause)?.isEnabled = isRecording
     }
 
     override fun onResume() {
@@ -156,16 +198,23 @@ class TrackScreen : AppCompatActivity() {
         try {
             billingManager?.restore()
         } catch (_: Exception) {}
-        if (engineBridge != null && hasLocationPermission()) {
+        if (isRecording && engineBridge != null && hasLocationPermission()) {
             startSensorsAndTick()
+        } else {
+            updateRecordingUi()
         }
     }
 
     override fun onPause() {
         super.onPause()
-        tickRunnable?.let { tickHandler?.removeCallbacks(it) }
+        if (isRecording) {
+            pauseForLifecycle()
+        } else {
+            tickRunnable?.let { tickHandler?.removeCallbacks(it) }
+            tickRunnable = null
+            sensorBridge?.stop()
+        }
         mapView?.onPause()
-        sensorBridge?.stop()
     }
 
     override fun onDestroy() {

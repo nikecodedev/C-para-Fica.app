@@ -71,3 +71,7 @@
 811	954	7934369560771007	../../../../build/intermediates/cxx/Debug/62213o5t/obj/armeabi-v7a/libfica_native.so	c59eaffba00810b4
 5	668	7934391002975790	CMakeFiles/fica_native.dir/platform/android/EngineJNI.cpp.o	c748aecb57356ec1
 669	784	7934391004024449	../../../../build/intermediates/cxx/Debug/62213o5t/obj/armeabi-v7a/libfica_native.so	c59eaffba00810b4
+4	799	7934764300437424	CMakeFiles/app_ui.dir/app/ui/FirstBuildIntegration.cpp.o	2644477377413d76
+800	1167	7934764303866943	libapp_ui.a	5035c6a8b3a55da9
+1167	1700	7934764309072340	../../../../build/intermediates/cxx/Debug/62213o5t/obj/armeabi-v7a/first_build_test	504ad9d21cd39cde
+1187	1702	7934764309162097	../../../../build/intermediates/cxx/Debug/62213o5t/obj/armeabi-v7a/libfica_native.so	c59eaffba00810b4
